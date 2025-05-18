@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Color Changer</title>
+  <style>
+    h1 {
+        text-align: center;
+    }
+    #Red {
+        background-color: red;
+        color: white;
+    }
+    #Yellow {
+        background-color: yellow;
+        color: white;
+    }
+    #Black {
+        background-color: black;
+        color: white;
+    }
+    #Purple {
+        background-color: purple;
+        color: white;
+    }
+    #Green {
+        background-color: green;
+        color: white;
+    }
+    #Blue {
+        background-color: blue;
+        color: white;
+    }
+    #white {
+        background-color: white;
+    }
+    .button-container {
+        position: fixed;
+        bottom: 0%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap:10px;
+        padding:10px;
+    }
+    button {
+        border-radius: 8px;
+        width: auto;
+        padding: 10px 20px;
+        margin:5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Background Color Changer</h1>
+  <div class="button-container">
+    <input type="color" id="color-picker" style="display: none;">
+  <button id="Red">Red</button>
+  <button id="Yellow">Yellow</button>
+  <button id="Black">Black</button>
+  <button id="Purple">Purple</button>
+  <button id="Green">Green</button>
+  <button id="Blue">Blue</button>
+  <button id="white">Default</button>
+  <button id="Custom">Customize</button>
+  </div>
+  <script>
+const buttons = document.querySelectorAll("button");
+function changebg(color) {
+    document.body.style.backgroundColor = color;
+}
+
+buttons.forEach(button => {
+  if (button.id !== "Custom") {
+    button.addEventListener('click', function() {
+      changebg(this.id);
+    });
+  }
+});
+
+const colorPicker = document.getElementById("color-picker");
+colorPicker.addEventListener("input", function() {
+    changebg(this.value);
+});
+document.getElementById('Custom').addEventListener('click', () => {
+  colorPicker.click();
+});
+
+
+
+  </script>
+</body>
+</html>
