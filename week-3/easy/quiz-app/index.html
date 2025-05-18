@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+    .choices {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .choices li {
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+    .result {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <h2 id="question-text"></h2>
+    <ul id="choices-list" class="choices"></ul>
+    <div>
+      <button id="prev-btn">Previous</button>
+      <button id="next-btn">Next</button>
+      <button id="submit-btn" style="display:none;">Submit</button>
+    </div>
+    <div id="result" class="result"></div>
+  </div>
+  <script src="quiz.js" type="module"></script>
+</body>
+</html>
