@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskolomew</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .input-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #todos {
+            margin-top: 20px;
+        }
+        #todos div {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        #todos div:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        #todos button {
+            background-color: #f44336;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        #todos button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Taskolomew</h1>
+    
+    <div class="input-container">
+        <input type="text" placeholder="Enter your task">
+        <button onclick="addTodo()">Add Task</button>
+    </div>
+    
+    <div class="controls">
+        <button onclick="deleteFirstTodo()">Delete First Task</button>
+        <button onclick="deleteLastTodo()">Delete Last Task</button>
+    </div>
+    
+    <div id="todos">
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
